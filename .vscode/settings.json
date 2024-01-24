@@ -1,0 +1,104 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "always",
+      "source.fixAll.ruff": "always",
+    }
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 2,
+  "editor.cursorWidth": 4,
+  "editor.fontFamily": "'Operator Mono Lig', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": 400,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineHeight": 24,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80,
+    88,
+    120
+  ],
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "entity.name.type.class",
+          "keyword",
+          "constant",
+          "storage.modifier",
+          "storage.type.class.js"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "editor.unfoldOnClickAfterEndOfLine": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.incrementalNaming": "smart",
+  "files.autoSave": "onWindowChange",
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "files.exclude": {
+    "**/.git": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "scminput": false
+  },
+  "material-icon-theme.activeIconPack": "vue_vuex",
+  "material-icon-theme.folders.color": "#26A5FF",
+  "print.colourScheme": "Grayscale",
+  "print.folder.fileNames": false,
+  "print.fontSize": "11.5pt",
+  "print.lineNumbers": "on",
+  "scm.defaultViewMode": "tree",
+  "telemetry.telemetryLevel": "crash",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.gpuAcceleration": "on",
+  "window.autoDetectColorScheme": true,
+  "window.dialogStyle": "custom",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": -0.4573326950761084,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.colorTheme": "GitHub Light Default",
+  "git.autofetch": true,
+}

@@ -1,0 +1,17 @@
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[user]
+	name = Mukund Shah
+	email = 39938037+mukundshah@users.noreply.github.com
+	signingkey = ~/.ssh/github_mukundshah.pub
+[gpg]
+	format = ssh

@@ -1,3 +1,4 @@
+ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -12,6 +13,14 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
+# no duplicates in history
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 zstyle :omz:plugins:ssh-agent identities github_mukundshah digitalocean_awecode digitalocean_itechstore
 
@@ -44,14 +53,20 @@ alias vc='mkvirtualenv $(basename "$PWD")'
 alias vd='deactivate'
 alias vrm='rmvirtualenv'
 alias vls='lsvirtualenv'
+# aliases end
 
 # exports
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/opt/python@3.12/libexec/bin:/usr/local/bin:$PATH
+# exports end
 
 # pnpm
-export PNPM_HOME="/Users/mukund/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# starship
+eval "$(starship init zsh)"
+# starship end

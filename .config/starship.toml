@@ -1,0 +1,14 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+format = '$directory$character'
+right_format = """$all"""
+
+[character]
+success_symbol = '[➜](bold green)'
+
+[docker_context]
+disabled = true
+
+[package]
+disabled = true

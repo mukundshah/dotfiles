@@ -1,8 +1,10 @@
 ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 plugins=(
-  t z gh
+  t
+  z
+  gh
   git
   asdf
   pnpm
@@ -22,7 +24,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-zstyle :omz:plugins:ssh-agent identities github_mukundshah
+zstyle :omz:plugins:ssh-agent identities github_mukundshah digitalocean_awecode digitalocean_itechstore
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,7 +58,7 @@ alias vls='lsvirtualenv'
 # aliases end
 
 # exports
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/opt/python@3.12/libexec/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/opt/python@3.12/libexec/bin:$PATH
 # exports end
 
 # pnpm

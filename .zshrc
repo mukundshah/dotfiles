@@ -24,7 +24,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-zstyle :omz:plugins:ssh-agent identities github_mukundshah digitalocean_awecode digitalocean_itechstore
+zstyle :omz:plugins:ssh-agent identities github_mukundshah
 
 source $ZSH/oh-my-zsh.sh
 

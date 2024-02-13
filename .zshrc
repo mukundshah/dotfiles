@@ -2,18 +2,17 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
 plugins=(
-  t
   z
   gh
   git
   asdf
   pnpm
   poetry
+  F-Sy-H
   ssh-agent
   virtualenvwrapper
   zsh-autocomplete
   zsh-autosuggestions
-  zsh-syntax-highlighting
 )
 
 # no duplicates in history
@@ -25,7 +24,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 zstyle :omz:plugins:ssh-agent identities github_mukundshah
-
 source $ZSH/oh-my-zsh.sh
 
 # aliases
@@ -57,8 +55,27 @@ alias vrm='rmvirtualenv'
 alias vls='lsvirtualenv'
 # aliases end
 
+# functions
+# create a file with parent directories if they don't exist
+function t(){
+  for arg in $@; do
+    mkdir -p $(dirname $arg)
+    touch $arg
+  done
+}
+
+# create a file with parent directories if they don't exist and open it vs code
+function tc(){
+  for arg in $@; do
+    mkdir -p $(dirname $arg)
+    touch $arg
+    code $arg
+  done
+}
+# functions end
+
 # exports
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/opt/python@3.12/libexec/bin:$PATH
+# export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/opt/python@3.12/libexec/bin:$PATH
 # exports end
 
 # pnpm

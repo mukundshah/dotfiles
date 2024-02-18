@@ -15,3 +15,5 @@
 	signingkey = ~/.ssh/github_mukundshah.pub
 [gpg]
 	format = ssh
+[core]
+	excludesfile = ~/.global.gitignore

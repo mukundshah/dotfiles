@@ -35,7 +35,7 @@ alias v='nvim'
 
 alias ls='exa'
 alias vi='nvim'
-alias lt='exa --tre --level=2'
+alias lt='exa --tree --level=2'
 alias llt='exa --tree --long --level=2'
 
 alias pg="pgcli"

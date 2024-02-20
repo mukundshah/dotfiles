@@ -23,7 +23,8 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-zstyle :omz:plugins:ssh-agent identities github_mukundshah
+zstyle :omz:plugins:ssh-agent identities github_mukundshah digitalocean_awecode digitalocean_itechstore
+
 source $ZSH/oh-my-zsh.sh
 
 # aliases
@@ -34,6 +35,8 @@ alias v='nvim'
 
 alias ls='exa'
 alias vi='nvim'
+alias lt='exa --tre --level=2'
+alias llt='exa --tree --long --level=2'
 
 alias pg="pgcli"
 alias ir="iredis"

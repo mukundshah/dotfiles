@@ -8,7 +8,11 @@ setopt HIST_SAVE_NO_DUPS
 
 zstyle :omz:plugins:ssh-agent identities idrsa
 
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+if [[ $(uname) == "Darwin" ]]; then
+    	source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+else
+	source $HOME/.antidote/antidote.zsh
+fi
 antidote load
 
 # aliases

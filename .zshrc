@@ -1,20 +1,3 @@
-ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
-
-plugins=(
-  z
-  gh
-  git
-  asdf
-  pnpm
-  poetry
-  F-Sy-H
-  ssh-agent
-  virtualenvwrapper
-  zsh-autocomplete
-  zsh-autosuggestions
-)
-
 # no duplicates in history
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -25,7 +8,8 @@ setopt HIST_SAVE_NO_DUPS
 
 zstyle :omz:plugins:ssh-agent identities idrsa
 
-source $ZSH/oh-my-zsh.sh
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 # aliases
 alias c='clear'
@@ -33,10 +17,12 @@ alias o='open'
 alias q='exit'
 alias v='nvim'
 
-alias ls='exa'
+alias ls='eza'
 alias vi='nvim'
-alias lt='exa --tree --level=2'
-alias llt='exa --tree --long --level=2'
+alias lt='eza --tree --level=2'
+alias llt='eza --tree --long --level=2'
+
+alias zq="zoxide query"
 
 alias pg="pgcli"
 alias ir="iredis"

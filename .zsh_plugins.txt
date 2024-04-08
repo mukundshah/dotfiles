@@ -1,11 +1,16 @@
-# Standard plugins
+# Syntax highlighting
 z-shell/F-Sy-H
+
+# Completion
 marlonrichert/zsh-autocomplete
 zsh-users/zsh-autosuggestions
-ntnyq/omz-plugin-pnpm
 
-# Oh My Zsh lib (required before OMZ plugins)
-ohmyzsh/ohmyzsh path:lib
+# Oh My Zsh lib
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:lib/completion.zsh
+ohmyzsh/ohmyzsh path:lib/directories.zsh
+ohmyzsh/ohmyzsh path:lib/functions.zsh
+ohmyzsh/ohmyzsh path:lib/history.zsh
 
 # Oh My Zsh plugins
 ohmyzsh/ohmyzsh path:plugins/git
@@ -13,3 +18,6 @@ ohmyzsh/ohmyzsh path:plugins/asdf
 ohmyzsh/ohmyzsh path:plugins/zoxide
 ohmyzsh/ohmyzsh path:plugins/ssh-agent
 ohmyzsh/ohmyzsh path:plugins/virtualenvwrapper
+
+# Alias
+ntnyq/omz-plugin-pnpm

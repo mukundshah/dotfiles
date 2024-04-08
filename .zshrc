@@ -26,10 +26,10 @@ alias vi='nvim'
 alias lt='eza --tree --level=2'
 alias llt='eza --tree --long --level=2'
 
-alias zq="zoxide query"
+alias zq='zoxide query'
 
-alias pg="pgcli"
-alias ir="iredis"
+alias pg='pgcli'
+alias ir='iredis'
 alias cpy='code --profile Python'
 alias cwe='code --profile Web'
 alias rizz='source ~/.zshrc'

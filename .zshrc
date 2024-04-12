@@ -83,30 +83,24 @@ esac
 eval "$(starship init zsh)"
 # starship end
 
-# zoxide z completions
-_zoxide_zsh_tab_completion() {
+# completion for zoxide z
+__zoxide_z_completion() {
     (( $+compstate )) && compstate[insert]=menu
 
-    local matched_completions directory_completions expl
+    local expl
+    local completions=($(zoxide query -l ${(@)words:1}))
 
-    matched_completions=($(zoxide query -l ${(@)words:1}))
-    [[ -z $matched_completions ]] && return 1
+    _files -/
 
-    _description -V matched_completions expl 'matched'
-
-    compadd "${expl[@]}" -QU -V z -- "${matched_completions[@]}"
-
-    # directory_completions=($(ls -d ${(@)words:1}*/))
-    # [[ -z $directory_completions ]] && return 1
-
-    # _description -V directory_completions expl 'directories'
-
-    # compadd "${expl[@]}" -S/ -V z -- "${directory_completions[@]}"
+    if [[ ${#completions[@]} -gt 0 ]]; then
+        _description -V completions expl 'zoxide query'
+        compadd "${expl[@]}" -QU -V z -- "${completions[@]}"
+    fi
 
     return 0
 }
 
 if [ "${+functions[compdef]}" -ne 0 ]; then
-    compdef _zoxide_zsh_tab_completion z 2> /dev/null
+    compdef __zoxide_z_completion z 2> /dev/null
 fi
 # zoxide z completions end

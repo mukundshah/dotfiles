@@ -46,6 +46,8 @@ alias vc='mkvirtualenv $(basename "$PWD")'
 alias vd='deactivate'
 alias vrm='rmvirtualenv'
 alias vls='lsvirtualenv'
+
+alias groot='cd $(git rev-parse --git-common-dir)/..'
 # aliases end
 
 # functions

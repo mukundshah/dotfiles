@@ -81,7 +81,6 @@ function gwtsw() {
     # Use git worktree ls to find the worktree path
     local worktree_path=$(git worktree list | grep -e "$branch_name" | awk '{print $1}')
     local git_dir=$(git rev-parse --git-common-dir)
-    echo $git_dir
 
     # Check if the worktree exists
     if [ -d "$worktree_path" ]; then

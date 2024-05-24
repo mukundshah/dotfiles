@@ -65,6 +65,33 @@ function tc(){
     code $arg
   done
 }
+
+# cd into worktree or create a new worktree
+function gwtsw() {
+    local branch_name=$1
+
+    # Check if the branch exists
+    if ! git show-ref --verify --quiet "refs/heads/$branch_name"; then
+        echo "branch '$branch_name' does not exist."
+        return 1
+    fi
+
+    # Use git worktree ls to find the worktree path
+    local worktree_path=$(git worktree list | grep -e "$branch_name" | awk '{print $1}')
+    local git_dir=$(git rev-parse --git-common-dir)
+    echo $git_dir
+
+    # Check if the worktree exists
+    if [ -d "$worktree_path" ]; then
+        # Change directory into the worktree
+        cd "$worktree_path"
+    else
+        # Create the worktree and change directory into it
+        cd "$git_dir/.."
+        git worktree add ".worktrees/$branch_name"
+        cd ".worktrees/$branch_name"
+    fi
+}
 # functions end
 
 # exports

@@ -1,4 +1,6 @@
 # no duplicates in history
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -9,9 +11,9 @@ setopt HIST_SAVE_NO_DUPS
 zstyle :omz:plugins:ssh-agent identities idrsa
 
 if [[ $(uname) == "Darwin" ]]; then
-    	source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+    source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 else
-	source $HOME/.antidote/antidote.zsh
+    source $HOME/.antidote/antidote.zsh
 fi
 antidote load
 
@@ -92,6 +94,34 @@ function gwtsw() {
         git worktree add ".worktrees/$branch_name"
         cd ".worktrees/$branch_name"
     fi
+}
+
+function lz() {
+    local ls_opts=()
+    local zq_args=()
+    local parsing_ls=true
+
+    # Parse arguments
+    for arg in "$@"; do
+        if [[ $arg == "--" ]]; then
+            parsing_ls=false
+            continue
+        fi
+
+        if $parsing_ls; then
+            if [[ $arg == -* ]]; then
+                ls_opts+=("$arg")
+            else
+                parsing_ls=false
+                zq_args+=("$arg")
+            fi
+        else
+            zq_args+=("$arg")
+        fi
+    done
+
+    # Execute the command
+    ls "${ls_opts[@]}" "$(zq "${zq_args[@]}")"
 }
 # functions end
 

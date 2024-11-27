@@ -3,6 +3,8 @@
 add_newline = false
 format = '$directory$character'
 right_format = """$all"""
+scan_timeout = 300
+command_timeout = 1500
 
 [docker_context]
 disabled = true

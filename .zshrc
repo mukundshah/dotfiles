@@ -53,6 +53,16 @@ alias groot='cd $(git rev-parse --git-common-dir)/..'
 # aliases end
 
 # functions
+function ve() {
+    local venv_name=${1:-$(basename "$PWD")}
+    source "$WORKON_HOME/$venv_name/bin/activate"
+}
+
+function vc() {
+    local venv_name=${1:-$(basename "$PWD")}
+    mkvirtualenv "$venv_name"
+}
+
 # create a file with parent directories if they don't exist
 function t(){
   for arg in $@; do
@@ -122,6 +132,31 @@ function lz() {
 
     # Execute the command
     ls "${ls_opts[@]}" "$(zq "${zq_args[@]}")"
+}
+
+# git commit in the past
+function git_commit_date() {
+    local date_cmd
+
+    # Check if gdate is available (GNU date for macOS)
+    if command -v gdate &> /dev/null; then
+        date_cmd="gdate"
+    elif command -v date &> /dev/null; then
+        date_cmd="date"
+    else
+        echo "Error: No suitable date command found" >&2
+        return 1
+    fi
+
+    local date_override="$1"
+    if [[ -n "$date_override" ]]; then
+        shift  # Remove the first argument (date) from the argument list
+        GIT_AUTHOR_DATE="$($date_cmd -d "$date_override")" \
+        GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE" \
+        git commit "$@"
+    else
+        git commit "$@"
+    fi
 }
 # functions end
 

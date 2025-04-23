@@ -43,6 +43,12 @@ alias ms='python manage.py runserver'
 alias mc='python manage.py createsuperuser'
 alias msh='python manage.py shell'
 
+alias umk='uv run manage.py makemigrations'
+alias umi='uv run manage.py migrate'
+alias ums='uv run manage.py runserver'
+alias umc='uv run manage.py createsuperuser'
+alias umsh='uv run manage.py shell'
+
 alias ve='source $WORKON_HOME/$(basename "$PWD")/bin/activate'
 alias vc='mkvirtualenv $(basename "$PWD")'
 alias vd='deactivate'
